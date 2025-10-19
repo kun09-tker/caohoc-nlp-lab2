@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chat bot về khoa học ở cấp trung học</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-card" role="application" aria-label="Chat">
+    <!-- <aside class="sidebar" aria-hidden="true">
+      <h3>Conversations</h3>
+      <div class="conversation">
+        <div class="avatar">TL</div>
+        <div>
+          <div style="font-weight:600">Tấn Lộc</div>
+          <div style="font-size:13px;color:var(--muted)">Hoạt động 2 giờ trước</div>
+        </div>
+      </div>
+    </aside> -->
+
+    <main class="main">
+      <div class="header">
+        <img class="avatar" src="../../images/science_icon.png" alt="Avatar" style="width:46px;height:46px;border-radius:50%;">
+        <div>
+          <div class="title">Chat bot về khoa học ở cấp trung học</div>
+          <div class="status">
+            <span class="dot"></span> Online
+          </div>
+        </div>
+      </div>
+
+      <div class="messages" id="messages" tabindex="0" aria-live="polite">
+        <!-- Tin nhắn sẽ được thêm vào đây -->
+      </div>
+
+      <form class="composer" id="composer" onsubmit="return false;" aria-label="Gửi tin nhắn">
+        <input id="msgInput" type="text" placeholder="Nhập câu hỏi..." aria-label="Nội dung tin nhắn" />
+        <button id="sendBtn" aria-label="Gửi">Gửi</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

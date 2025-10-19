@@ -1,0 +1,35 @@
+Start !!
+Epoch 1/100 - Loss: 27.7950 - Acc: 0.0339 - rouge-1: 0.3953 - rouge-2: 0.1025 - rouge-L: 0.3947 - bleu: 0.0642
+Evaluation: - Loss: 2.3903 - Acc: 0.0474 - rouge-1: 0.3319 - rouge-2: 0.0836 - rouge-L: 0.3301 - bleu: 0.0567
+Epoch 2/100 - Loss: 9.7258 - Acc: 0.0358 - rouge-1: 0.2767 - rouge-2: 0.0704 - rouge-L: 0.2761 - bleu: 0.0466
+Evaluation: - Loss: 2.4182 - Acc: 0.0378 - rouge-1: 0.3969 - rouge-2: 0.1092 - rouge-L: 0.3953 - bleu: 0.0689
+Epoch 3/100 - Loss: 0.9545 - Acc: 0.0315 - rouge-1: 0.3693 - rouge-2: 0.1018 - rouge-L: 0.3688 - bleu: 0.0620
+Evaluation: - Loss: 2.1228 - Acc: 0.0396 - rouge-1: 0.4662 - rouge-2: 0.1398 - rouge-L: 0.4651 - bleu: 0.0828
+Epoch 4/100 - Loss: 0.4471 - Acc: 0.0350 - rouge-1: 0.4100 - rouge-2: 0.1191 - rouge-L: 0.4092 - bleu: 0.0700
+Evaluation: - Loss: 1.7071 - Acc: 0.0652 - rouge-1: 0.4994 - rouge-2: 0.1647 - rouge-L: 0.4983 - bleu: 0.0923
+Epoch 5/100 - Loss: 0.2992 - Acc: 0.2605 - rouge-1: 0.5338 - rouge-2: 0.3040 - rouge-L: 0.5332 - bleu: 0.1391
+Evaluation: - Loss: 1.0558 - Acc: 0.4856 - rouge-1: 0.6964 - rouge-2: 0.4980 - rouge-L: 0.6950 - bleu: 0.2229
+Epoch 6/100 - Loss: 0.1860 - Acc: 0.6386 - rouge-1: 0.7337 - rouge-2: 0.5984 - rouge-L: 0.7333 - bleu: 0.2568
+Evaluation: - Loss: 0.6577 - Acc: 0.7557 - rouge-1: 0.8142 - rouge-2: 0.6922 - rouge-L: 0.8126 - bleu: 0.3061
+Epoch 7/100 - Loss: 0.1340 - Acc: 0.7644 - rouge-1: 0.8191 - rouge-2: 0.6831 - rouge-L: 0.8186 - bleu: 0.2963
+Evaluation: - Loss: 0.5186 - Acc: 0.8163 - rouge-1: 0.8575 - rouge-2: 0.7218 - rouge-L: 0.8562 - bleu: 0.3229
+Epoch 8/100 - Loss: 0.1061 - Acc: 0.8049 - rouge-1: 0.8525 - rouge-2: 0.7065 - rouge-L: 0.8520 - bleu: 0.3090
+Evaluation: - Loss: 0.4341 - Acc: 0.8296 - rouge-1: 0.8704 - rouge-2: 0.7369 - rouge-L: 0.8692 - bleu: 0.3252
+Epoch 9/100 - Loss: 0.0912 - Acc: 0.8141 - rouge-1: 0.8610 - rouge-2: 0.7179 - rouge-L: 0.8605 - bleu: 0.3128
+Evaluation: - Loss: 0.3935 - Acc: 0.8364 - rouge-1: 0.8741 - rouge-2: 0.7444 - rouge-L: 0.8730 - bleu: 0.3279
+Epoch 10/100 - Loss: 0.0832 - Acc: 0.8193 - rouge-1: 0.8658 - rouge-2: 0.7266 - rouge-L: 0.8653 - bleu: 0.3161
+Evaluation: - Loss: 0.3700 - Acc: 0.8384 - rouge-1: 0.8776 - rouge-2: 0.7493 - rouge-L: 0.8764 - bleu: 0.3290
+Epoch 11/100 - Loss: 0.0776 - Acc: 0.8218 - rouge-1: 0.8680 - rouge-2: 0.7315 - rouge-L: 0.8674 - bleu: 0.3170
+Evaluation: - Loss: 0.3534 - Acc: 0.8429 - rouge-1: 0.8809 - rouge-2: 0.7548 - rouge-L: 0.8794 - bleu: 0.3339
+Epoch 12/100 - Loss: 0.0738 - Acc: 0.8254 - rouge-1: 0.8711 - rouge-2: 0.7375 - rouge-L: 0.8704 - bleu: 0.3196
+Evaluation: - Loss: 0.3417 - Acc: 0.8472 - rouge-1: 0.8850 - rouge-2: 0.7635 - rouge-L: 0.8834 - bleu: 0.3374
+Epoch 13/100 - Loss: 0.0702 - Acc: 0.8284 - rouge-1: 0.8733 - rouge-2: 0.7415 - rouge-L: 0.8726 - bleu: 0.3213
+Evaluation: - Loss: 0.3317 - Acc: 0.8490 - rouge-1: 0.8863 - rouge-2: 0.7661 - rouge-L: 0.8847 - bleu: 0.3387
+Epoch 14/100 - Loss: 0.0672 - Acc: 0.8312 - rouge-1: 0.8750 - rouge-2: 0.7456 - rouge-L: 0.8742 - bleu: 0.3233
+Evaluation: - Loss: 0.3218 - Acc: 0.8511 - rouge-1: 0.8880 - rouge-2: 0.7707 - rouge-L: 0.8865 - bleu: 0.3396
+Epoch 15/100 - Loss: 0.0648 - Acc: 0.8339 - rouge-1: 0.8770 - rouge-2: 0.7497 - rouge-L: 0.8762 - bleu: 0.3253
+Evaluation: - Loss: 0.3128 - Acc: 0.8549 - rouge-1: 0.8896 - rouge-2: 0.7741 - rouge-L: 0.8876 - bleu: 0.3402
+Epoch 16/100 - Loss: 0.0627 - Acc: 0.8362 - rouge-1: 0.8790 - rouge-2: 0.7533 - rouge-L: 0.8782 - bleu: 0.3270
+Evaluation: - Loss: 0.3049 - Acc: 0.8550 - rouge-1: 0.8914 - rouge-2: 0.7763 - rouge-L: 0.8894 - bleu: 0.3412
+Epoch 17/100 - Loss: 0.0608 - Acc: 0.8388 - rouge-1: 0.8808 - rouge-2: 0.7569 - rouge-L: 0.8800 - bleu: 0.3287
+Evaluation: - Loss: 0.2987 - Acc: 0.8563 - rouge-1: 0.8920 - rouge-2: 0.7772 - rouge-L: 0.8899 - bleu: 0.3415
