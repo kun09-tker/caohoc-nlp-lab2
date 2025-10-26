@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg: #f4f7fb;
+  --card: #fff;
+  --accent: #4f46e5;
+  --muted: #64748b;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden; /* ✅ Không cho toàn trang cuộn */
+}
+
+/* ========================
+   KHUNG CHÍNH
+======================== */
+.chat-card {
+  width: 100%;
+  max-width: 700px;
+  height: 80vh;
+  background: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(12,20,40,0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-y: auto;  /* ✅ cuộn toàn khung khi nội dung vượt giới hạn */
+  overflow-x: hidden;
+  scrollbar-gutter: stable; /* ✅ tránh layout nhảy khi xuất hiện thanh cuộn */
+}
+
+/* ========================
+   HEADER
+======================== */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: var(--card);
+  z-index: 5;
+}
+.title {
+  font-weight: 600;
+  font-size: 16px;
+}
+.status {
+  font-size: 13px;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+}
+.switch-btn {
+  margin-left: auto;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.switch-btn:hover {
+  opacity: 0.85;
+}
+
+/* ========================
+   MESSAGES
+======================== */
+.messages {
+  flex: 1;                      /* ✅ chiếm hết phần giữa */
+  padding: 20px;
+  overflow-y: auto;             /* ✅ chỉ phần này được cuộn */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #f9f9f9;
+  scrollbar-width: thin;
+  min-height: 0;                /* ✅ CỰC KỲ QUAN TRỌNG: cho phép co lại khi cuộn */
+  scroll-behavior: smooth;
+}
+
+/* ✅ Thanh cuộn đẹp */
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+.messages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.messages::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
+}
+.messages::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
+/* Tin nhắn hệ thống */
+.system-msg {
+  text-align: center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+/* Tin nhắn người dùng */
+.sentiment-msg {
+  white-space: pre-wrap;
+  padding: 12px 14px;
+  border-radius: 10px;
+  line-height: 1.4;
+  font-size: 15px;
+  color: #111827;
+  transition: background-color 0.3s ease;
+  word-break: break-word;
+}
+
+/* ========================
+   COMPOSER (Ô NHẬP)
+======================== */
+.composer {
+  display: flex;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+  background: var(--card);
+  flex-shrink: 0;               /* ✅ Không bị co */
+  position: sticky;             /* ✅ Cố định ở đáy vùng hiển thị */
+  bottom: 0;
+  z-index: 10;
+}
+.composer input {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.08);
+  outline: none;
+  font-size: 14px;
+}
+.composer input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+}
+.composer button {
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.composer button:hover {
+  opacity: 0.9;
+}
+
+/* ========================
+   Thanh cuộn toàn khung (phụ)
+======================== */
+.chat-card::-webkit-scrollbar {
+  width: 10px;
+}
+.chat-card::-webkit-scrollbar-thumb {
+  background-color: rgba(100, 100, 100, 0.3);
+  border-radius: 6px;
+}
+.chat-card::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(100, 100, 100, 0.5);
+}

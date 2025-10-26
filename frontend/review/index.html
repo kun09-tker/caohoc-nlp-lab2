@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Đánh giá bình luận</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="chat-card">
+    <main class="main">
+      <div class="header">
+        <img class="avatar" src="../../images/review_icon.png" alt="Avatar" style="width:46px;height:46px;border-radius:50%;">
+        <div>
+          <div class="title">Đánh giá bình luận theo khía cạnh</div>
+          <div class="status"><span class="dot"></span> Online</div>
+        </div>
+        <button class="switch-btn" id="switchChatBtn">Chuyển sang chat khoa học</button>
+      </div>
+
+      <div class="messages" id="messages">
+        <div class="system-msg">💬 Nhập bình luận và khía cạnh để đánh giá cảm xúc.</div>
+      </div>
+
+      <form class="composer" id="composer" onsubmit="return false;">
+        <input id="reviewInput" type="text" placeholder="Nhập bình luận..." aria-label="Bình luận" />
+        <input id="aspectInput" type="text" placeholder="Nhập khía cạnh (aspect)..." aria-label="Khía cạnh" />
+        <button id="evalBtn">Đánh giá</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Nút chuyển trang sang Chat
+    document.getElementById('switchChatBtn').addEventListener('click', () => {
+      window.location.href = '../chat/index.html';
+    });
+  </script>
+</body>
+</html>

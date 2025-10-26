@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chat bot về khoa học ở cấp trung học</title>
+  <title>Chat bot khoa học trung cấp</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -23,11 +23,19 @@
       <div class="header">
         <img class="avatar" src="../../images/science_icon.png" alt="Avatar" style="width:46px;height:46px;border-radius:50%;">
         <div>
-          <div class="title">Chat bot về khoa học ở cấp trung học</div>
+          <div class="title">Chat bot khoa học trung cấp</div>
           <div class="status">
             <span class="dot"></span> Online
           </div>
         </div>
+        <div class="mode-switch">
+          <label class="switch">
+            <input type="checkbox" id="ragSwitch" />
+            <span class="slider"></span>
+          </label>
+          <span id="modeLabel">QA mode</span>
+        </div>
+        <button class="switch-btn" id="switchChatBtn">Chuyển sang đánh giá bình luận</button>
       </div>
 
       <div class="messages" id="messages" tabindex="0" aria-live="polite">
@@ -42,5 +50,11 @@
   </div>
 
   <script src="script.js"></script>
+  <script>
+    // Nút chuyển trang sang Chat
+    document.getElementById('switchChatBtn').addEventListener('click', () => {
+      window.location.href = '../review/index.html';
+    });
+  </script>
 </body>
 </html>

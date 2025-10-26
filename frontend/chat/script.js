@@ -4,8 +4,27 @@ const sendBtn = document.getElementById('sendBtn');
 const statusDot = document.querySelector('.status .dot');
 const statusText = document.querySelector('.status');
 const composer = document.getElementById('composer');
-let backendReadyFlag = false;
-let backendCheckInterval = null;
+const ragSwitch = document.getElementById('ragSwitch');
+const modeLabel = document.getElementById('modeLabel');
+// let backendReadyFlag = false;
+// let backendCheckInterval = null;
+
+
+ragSwitch.addEventListener('change', () => {
+  updateModeColors();
+});
+
+function updateModeColors() {
+  if (ragSwitch.checked) {
+    document.body.classList.add('rag-mode');
+    document.body.classList.remove('qa-mode');
+    modeLabel.textContent = 'RAG mode';
+  } else {
+    document.body.classList.add('qa-mode');
+    document.body.classList.remove('rag-mode');
+    modeLabel.textContent = 'QA mode';
+  }
+}
 
 // Tạo một tin nhắn
 function addMessage({ who='you', text='', meta='' }) {
@@ -36,6 +55,9 @@ function addMessage({ who='you', text='', meta='' }) {
 
   const bubble = document.createElement('div');
   bubble.className = 'bubble ' + (who === 'me' ? 'me' : 'you');
+  if (who === 'you') {
+    bubble.dataset.mode = ragSwitch.checked ? 'rag' : 'qa';
+  }
   bubble.textContent = text;
   bubbleWrap.appendChild(bubble);
 
@@ -61,8 +83,12 @@ function sendMessage() {
   input.value = '';
   showTyping();
 
+  const endpoint = ragSwitch.checked
+  ? "http://127.0.0.1:8000/ask_rag"
+  : "http://127.0.0.1:8000/ask";
+
   // Gọi mô hình QA backend
-  fetch("http://127.0.0.1:8000/ask", {
+  fetch(endpoint, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ question: val })
@@ -78,10 +104,16 @@ function sendMessage() {
     })
     .catch(err => {
       hideTyping();
+      addMessage({
+        who: 'you',
+        text: '⚠️ Lỗi kết nối tới server QA',
+        meta: timeNow()
+      });
       // addMessage({ who: 'you', text: '⚠️ Lỗi kết nối tới server QA.' });
-      backendReadyFlag = false;
-      checkBackend();
-      backendCheckInterval = setInterval(checkBackend, 5000);
+      // backendReadyFlag = false;
+      // backendNotReady();
+      // checkBackend();
+      // backendCheckInterval = setInterval(checkBackend, 5000);
     });
 }
 
@@ -127,22 +159,22 @@ function hideTyping() {
 
 window.addEventListener('load', () => input.focus());
 
-async function checkBackend() {
-  if (backendReadyFlag) return; // đã ok thì không cần kiểm tra nữa
-  try {
-    const res = await fetch("http://127.0.0.1:8000/health");
-    const data = await res.json();
-    if (data.status === "ok") {
-      backendReady();
-      backendReadyFlag = true;
-      clearInterval(backendCheckInterval);
-    } else {
-      backendNotReady();
-    }
-  } catch (err) {
-    backendNotReady();
-  }
-}
+// async function checkBackend() {
+//   if (backendReadyFlag) return; // đã ok thì không cần kiểm tra nữa
+//   try {
+//     const res = await fetch("http://127.0.0.1:8000/health");
+//     const data = await res.json();
+//     if (data.status === "ok") {
+//       backendReady();
+//       backendReadyFlag = true;
+//       clearInterval(backendCheckInterval);
+//     } else {
+//       backendNotReady();
+//     }
+//   } catch (err) {
+//     backendNotReady();
+//   }
+// }
 
 // Khi backend sẵn sàng
 function backendReady() {
@@ -158,7 +190,7 @@ function backendReady() {
 // Khi backend chưa sẵn sàng
 function backendNotReady() {
   statusDot.style.backgroundColor = "#facc15"; // vàng
-  statusText.innerHTML = '<span class="dot" style="background-color:#facc15"></span> Away';
+  statusText.innerHTML = '<span class="dot" style="background-color:#facc15"></span> Đang kết nối ....';
   composer.style.pointerEvents = "none";
   input.disabled = true;
 
@@ -172,5 +204,5 @@ function backendNotReady() {
 }
 
 // Kiểm tra ban đầu và định kỳ 5s/lần cho tới khi ok
-checkBackend();
-backendCheckInterval = setInterval(checkBackend, 5000);
+// checkBackend();
+// backendCheckInterval = setInterval(checkBackend, 5000);
