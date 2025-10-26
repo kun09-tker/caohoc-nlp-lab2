@@ -8,3 +8,4 @@
     - **Go to API Keys** → create a **new key**. This key will be used to call the API.
 3. pip install -r requirements.txt
 4. uvicorn backend.app:app --reload
+5. run file ```frontend/chat/index.html``` or ```frontend/review/index.html```
